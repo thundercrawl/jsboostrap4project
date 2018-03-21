@@ -1,0 +1,166 @@
+<html>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Vision Online</a>
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" id="id_home" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Documents</a>
+            </li>
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">person</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">login</a>
+                    <a class="dropdown-item" href="#">profile</a>
+                </div>
+            </li>
+        </ul>
+        
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button type="button" class="btn btn-primary">Search</button>
+            
+        </form>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          
+        <div class="btn-group-vertical  bg-light" role="group" aria-label="">
+        <button type="button" class="btn btn-light">test table</button>
+        <button type="button" class="btn btn-light">test div</button>
+        <button type="button" class="btn btn-light">test dynamic</button>
+        <button type="button" class="btn btn-light">test ajax</button>
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modelId">test login</button>
+
+        <div class="btn-group" role="group"></div>
+            <button id="dropdownId" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="#"></a>
+                <a class="dropdown-item" href="#"></a>
+            </div>
+        </div>
+       
+        </div>
+</nav>
+    <main>
+        <table class="table" id="id_list">
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row"></td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td scope="row"></td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+</div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                <h4 class="modal-title" id="modelTitleId">Login</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                   <div class="form-group">
+                     <label for="">user</label>
+                     <input type="text"
+                       class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+                    <div class="form-group">
+                      <label for="">password</label>
+                      <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+                      <small id="helpId" class="form-text text-muted">Help text</small>
+                    </div>
+                   </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<script>
+    $('#exampleModal').on('show.bs.modal', event => {
+        var button = $(event.relatedTarget);
+        var modal = $(this);
+        // Use above variables to manipulate the DOM
+        
+    });
+</script>-->
+<script>
+$(document).ready(function(){
+    $('#modelId').on('hidden.bs.modal', function (e) {
+        console.log("close login dialog")
+  // do something...
+})
+
+$('.modal\-footer button').click(function()
+{
+   if($(this).text().trim() =="Login")
+   {
+      
+   }
+})
+})
+   // $('.container').fadeOut();
+  // var data = $(".container").load("data/verticalMenu.json");
+
+   $('.btn-group-vertical button').click(function(){
+       var bnt_text = $(this).text();
+       if(bnt_text=="test table")
+       {
+           $('.container').append("<p>add </p>")
+       }
+   })
+    $('#id_home').click(function()
+{
+    $(".container").add("p").css("color","red")
+    
+})
+
+$('.navbar .navbar-brand').click(function()
+{
+    alert(11)
+})
+    </script>
+   
+</html>
